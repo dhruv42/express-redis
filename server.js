@@ -1,12 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
-
 const app = express();
-const CONFIG = require('./config/config.json');
 require('./dbClass')
 
-const port = process.env.PORT || CONFIG.port;
+const port = process.env.PORT || 5000;
 const routes = require('./routes');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
